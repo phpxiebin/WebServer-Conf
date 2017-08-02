@@ -39,27 +39,22 @@
 
 ### 二、Nginx版本配置文件
 > nginx.conf文件示例如下：
-
+ 
 	server {
     	listen 80;
     	server_name 前端域名; 
 
     	# 前端配置
     	location / {
-        	root 前端项目路径;
+			root 前端项目路径;
 			# 默认缺省文件
-        	index index.html index.htm;
+        		index index.html index.htm;
     	}
-
     	# 转发到后端 (下面举个栗子)
-    	location /auth {
-        	proxy_pass         后端域名/auth;
-        	proxy_set_header   Host             $host;
-        	proxy_set_header   X-Real-IP        $remote_addr; 
-        	proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+   		location /auth {
+       		proxy_pass         后端域名/auth;
+       		proxy_set_header   Host             $host;
+       		proxy_set_header   X-Real-IP        $remote_addr; 
+       		proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
     	}
 	}
-
-
-
-
