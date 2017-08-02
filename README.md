@@ -8,33 +8,33 @@
 	
 	# 后端站点虚拟机
 	<VirtualHost *:80>
-    	DocumentRoot "后端代码地址"
-    	ServerName 后端域名
-    	ErrorLog "logs/后端域名-error_log"
-    	CustomLog "logs/后端域名-access_log" common
-    	<Directory "后端代码地址">
-        	Options Indexes FollowSymLinks
-        	AllowOverride all
-        	Order deny,allow
-        	Allow from all
-    	</Directory>
+    		DocumentRoot "后端代码地址"
+    		ServerName 后端域名
+    		ErrorLog "logs/后端域名-error_log"
+    		CustomLog "logs/后端域名-access_log" common
+    		<Directory "后端代码地址">
+        		Options Indexes FollowSymLinks
+        		AllowOverride all
+        		Order deny,allow
+        		Allow from all
+    		</Directory>
 	</VirtualHost>
 
 	# 前端站点虚拟机
 	<VirtualHost *:80>
-    	DocumentRoot "前端代码地址"
-    	ServerName 前端域名
-    	ErrorLog "logs/前端域名-error_log"
-    	CustomLog "logs/前端域名-access_log" common
-    	<Directory "前端代码地址">
-        	Options Indexes FollowSymLinks
-        	AllowOverride all
-        	Order deny,allow
-        	Allow from all
-    	</Directory>
+    		DocumentRoot "前端代码地址"
+    		ServerName 前端域名
+    		ErrorLog "logs/前端域名-error_log"
+    		CustomLog "logs/前端域名-access_log" common
+    		<Directory "前端代码地址">
+        		Options Indexes FollowSymLinks
+        		AllowOverride all
+        		Order deny,allow
+        		Allow from all
+    		</Directory>
 
-    	# 转发到后端 (下面举个栗子)
-    	ProxyPass  /auth  后端域名/auth
+    		# 转发到后端 (下面举个栗子)
+    		ProxyPass  /auth  后端域名/auth
 	</VirtualHost>
 
 ### 二、Nginx版本配置文件
